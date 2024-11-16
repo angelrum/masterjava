@@ -2,6 +2,7 @@ package ru.javaops.masterjava.xml.util;
 
 import com.google.common.io.Resources;
 import org.junit.Test;
+import ru.javaops.masterjava.MainXml;
 import ru.javaops.masterjava.xml.schema.CityType;
 import ru.javaops.masterjava.xml.schema.ObjectFactory;
 import ru.javaops.masterjava.xml.schema.Payload;
@@ -11,6 +12,8 @@ import javax.xml.namespace.QName;
 
 public class JaxbParserTest {
     private static final JaxbParser JAXB_PARSER = new JaxbParser(ObjectFactory.class);
+
+    private static final MainXml mainXml = new MainXml();
 
     static {
         JAXB_PARSER.setSchema(Schemas.ofClasspath("payload.xsd"));
@@ -36,5 +39,15 @@ public class JaxbParserTest {
         String strCity = JAXB_PARSER.marshal(cityElement2);
         JAXB_PARSER.validate(strCity);
         System.out.println(strCity);
+    }
+
+    @Test
+    public void testProject() throws Exception {
+        mainXml.JaxbParser("topjava1");
+    }
+
+    @Test
+    public void testStax() throws Exception {
+        mainXml.StaxParser("topjava2");
     }
 }

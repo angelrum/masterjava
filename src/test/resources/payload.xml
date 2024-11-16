@@ -20,4 +20,23 @@
         <City id="kiv">Киев</City>
         <City id="mnsk">Минск</City>
     </Cities>
+    <Projects>
+        <Project id="masterjava">Masterjava</Project>
+        <Project id="topjava">TopJava</Project>
+    </Projects>
+    <Groups>
+        <Group type="FINISHED" project="topjava">
+            <name>topjava1</name>
+            <Users>
+                <User email="admin@javaops.ru"/>
+                <User email="gmail@gmail.com"/>
+            </Users>
+        </Group>
+        <Group type="CURRENT" project="topjava">
+            <name>topjava2</name>
+            <Users>
+                <User email="admin@javaops.ru"/>
+            </Users>
+        </Group>
+    </Groups>
 </Payload>
